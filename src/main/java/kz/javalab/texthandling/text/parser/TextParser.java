@@ -5,7 +5,7 @@ import kz.javalab.texthandling.text.entity.impl.compoundtext.CompoundText;
 import kz.javalab.texthandling.text.entity.impl.paragraph.Paragraph;
 import kz.javalab.texthandling.text.entity.impl.sentence.Sentence;
 import kz.javalab.texthandling.text.entity.impl.sentencepart.SentencePart;
-import kz.javalab.texthandling.text.entity.impl.sentencepart.impl.punctuation.Punctuation;
+import kz.javalab.texthandling.text.entity.impl.sentencepart.impl.punctuation.PunctuationMark;
 import kz.javalab.texthandling.text.entity.impl.sentencepart.impl.word.Word;
 import kz.javalab.texthandling.text.entity.impl.symbol.Symbol;
 
@@ -168,12 +168,12 @@ public class TextParser {
                 sentenceParts.add(word);
 
                 while (punctuationMatcher.find()) {
-                    Punctuation punctuation = parsePunctuation(punctuationMatcher.group());
-                    sentenceParts.add(punctuation);
+                    PunctuationMark punctuationMark = parsePunctuation(punctuationMatcher.group().charAt(0));
+                    sentenceParts.add(punctuationMark);
                 }
 
                 while (whitespaceMatcher.find()) {
-                    Punctuation whitespace = parsePunctuation(whitespaceMatcher.group());
+                    PunctuationMark whitespace = parsePunctuation(whitespaceMatcher.group().charAt(0));
                     sentenceParts.add(whitespace);
                 }
             }
@@ -200,19 +200,14 @@ public class TextParser {
     }
 
     /**
-     * Creates an instance of <Code>Punctuation</Code> class parsed from the string representation of punctuation marks.
+     * Creates an instance of <Code>PunctuationMark</Code> class parsed from the string representation of punctuation marks.
      * @param punctuation String representation of punctuation marks.
-     * @return Instance of <Code>Punctuation</Code> class parsed from the string representation of punctuation marks.
+     * @return Instance of <Code>PunctuationMark</Code> class parsed from the string representation of punctuation marks.
      */
-    public Punctuation parsePunctuation(String punctuation) {
-        List<Symbol> symbols = new ArrayList<>();
+    public PunctuationMark parsePunctuation(Character punctuation) {
+        Symbol symbol = new Symbol(punctuation);
 
-        for (int index = 0; index < punctuation.length(); index++) {
-            Symbol symbol = new Symbol(punctuation.charAt(index));
-            symbols.add(symbol);
-        }
-
-        return new Punctuation(symbols);
+        return new PunctuationMark(symbol);
     }
 
     /**

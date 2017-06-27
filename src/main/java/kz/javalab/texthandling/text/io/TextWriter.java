@@ -5,14 +5,29 @@ import kz.javalab.texthandling.text.entity.Text;
 
 import java.io.*;
 
+/**
+ * Writes instance of <Code>Text</Code> to the file.
+ */
 public class TextWriter {
 
+    /**
+     * Target file.
+     */
     private String filePath;
+    /**
+     * Text to be written.
+     */
     private Text text;
 
-    public TextWriter() {
+
+    private TextWriter() {
     }
 
+    /**
+     * Creates instance of <Code>TextWriter</Code>.
+     * @param filePath Target file.
+     * @param text Text to be written.
+     */
     public TextWriter(String filePath, Text text) {
         this.filePath = filePath;
         this.text = text;
@@ -34,6 +49,10 @@ public class TextWriter {
         this.text = text;
     }
 
+    /**
+     * Writes instance of <Code>Text</Code> to the file.
+     * @throws IOException If something went wrong.
+     */
     public void writeText() throws IOException {
 
         BufferedReader bufferedReader = new BufferedReader(new StringReader(text.getContent()));
