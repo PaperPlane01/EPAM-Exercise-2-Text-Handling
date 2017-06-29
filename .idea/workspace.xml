@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7880319a-b9eb-4810-a156-b647d4a9c683" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output2.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kz/javalab/texthandling/app/Runner.class" afterPath="$PROJECT_DIR$/target/classes/kz/javalab/texthandling/app/Runner.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kz/javalab/texthandling/text/entity/impl/compoundtext/CompoundText.class" afterPath="$PROJECT_DIR$/target/classes/kz/javalab/texthandling/text/entity/impl/compoundtext/CompoundText.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kz/javalab/texthandling/text/io/TextReader.class" afterPath="$PROJECT_DIR$/target/classes/kz/javalab/texthandling/text/io/TextReader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kz/javalab/texthandling/text/io/TextWriter.class" afterPath="$PROJECT_DIR$/target/classes/kz/javalab/texthandling/text/io/TextWriter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/kz/javalab/texthandling/text/parser/TextParser.class" afterPath="$PROJECT_DIR$/target/classes/kz/javalab/texthandling/text/parser/TextParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output.txt" afterPath="$PROJECT_DIR$/output.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/app/Runner.java" afterPath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/app/Runner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/compoundtext/CompoundText.java" afterPath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/compoundtext/CompoundText.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentence/Sentence.java" afterPath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentence/Sentence.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/symbol/Symbol.java" afterPath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/symbol/Symbol.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/io/TextReader.java" afterPath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/io/TextReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/parser/TextParser.java" afterPath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/parser/TextParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentencepart/SentencePart.java" afterPath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentencepart/SentencePart.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/view/impl/TextView.java" afterPath="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/view/impl/TextView.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,7 +20,7 @@
       <file leaf-file-name="TextReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/io/TextReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
+            <state relative-caret-position="366">
               <caret line="46" column="137" lean-forward="false" selection-start-line="46" selection-start-column="137" selection-end-line="46" selection-end-column="137" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -69,18 +56,28 @@
       <file leaf-file-name="TextView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/view/impl/TextView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="391">
+              <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sentence.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Sentence.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentence/Sentence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
+            <state relative-caret-position="139">
               <caret line="42" column="56" lean-forward="false" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SentencePart.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentencepart/SentencePart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,7 +105,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Word.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Word.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentencepart/impl/word/Word.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
@@ -121,28 +118,11 @@
       <file leaf-file-name="TextWriter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/io/TextWriter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
+            <state relative-caret-position="207">
               <caret line="53" column="51" lean-forward="false" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
               <folding>
-                <element signature="e#661#662#0" expanded="false" />
-                <element signature="e#692#693#0" expanded="false" />
-                <element signature="e#740#741#0" expanded="false" />
-                <element signature="e#780#781#0" expanded="false" />
-                <element signature="e#809#810#0" expanded="false" />
-                <element signature="e#836#837#0" expanded="false" />
-                <element signature="e#874#875#0" expanded="false" />
-                <element signature="e#906#907#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Symbol.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/symbol/Symbol.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="52" column="8" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -221,14 +201,12 @@
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/Text.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentencepart/impl/punctuationmark/SentenceMarks.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentencepart/impl/punctuationmark/PunctuationMark.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/view/impl/TextView.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/parser/RegularExpression.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/view/View.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/paragraph/Paragraph.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentencepart/impl/punctuation/Punctuation.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentencepart/impl/punctuation/PunctuationMark.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentencepart/impl/word/Word.java" />
-        <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentencepart/SentencePart.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/io/TextWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/compoundtext/CompoundText.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/manager/TextManager.java" />
@@ -237,6 +215,8 @@
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/io/TextReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/parser/TextParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/app/Runner.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentencepart/SentencePart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/view/impl/TextView.java" />
       </list>
     </option>
   </component>
@@ -1304,12 +1284,12 @@
       <workItem from="1498554006842" duration="2989000" />
       <workItem from="1498603177660" duration="4761000" />
       <workItem from="1498728594950" duration="4045000" />
-      <workItem from="1498773672680" duration="2705000" />
+      <workItem from="1498773672680" duration="3006000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50337000" />
+    <option name="totallyTimeSpent" value="50638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -1337,7 +1317,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2484375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1406,14 +1386,7 @@
         <state relative-caret-position="816">
           <caret line="48" column="31" lean-forward="false" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
           <folding>
-            <element signature="e#661#662#0" expanded="false" />
-            <element signature="e#692#693#0" expanded="false" />
-            <element signature="e#740#741#0" expanded="false" />
-            <element signature="e#780#781#0" expanded="false" />
-            <element signature="e#809#810#0" expanded="false" />
-            <element signature="e#836#837#0" expanded="false" />
-            <element signature="e#874#875#0" expanded="false" />
-            <element signature="e#906#907#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1422,6 +1395,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12512">
           <caret line="736" column="16" lean-forward="false" selection-start-line="736" selection-start-column="16" selection-end-line="736" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#37085#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3871#3872#0" expanded="false" />
+            <element signature="e#3903#3904#0" expanded="false" />
+            <element signature="e#12964#12965#0" expanded="false" />
+            <element signature="e#12994#12995#0" expanded="false" />
+            <element signature="e#13313#13314#0" expanded="false" />
+            <element signature="e#13344#13345#0" expanded="false" />
+            <element signature="e#14765#14766#0" expanded="false" />
+            <element signature="e#14806#14807#0" expanded="false" />
+            <element signature="e#15583#15584#0" expanded="false" />
+            <element signature="e#15622#15623#0" expanded="false" />
+            <element signature="e#16522#16523#0" expanded="false" />
+            <element signature="e#16565#16566#0" expanded="false" />
+            <element signature="e#16934#16935#0" expanded="false" />
+            <element signature="e#16958#16959#0" expanded="false" />
+            <element signature="e#17430#17431#0" expanded="false" />
+            <element signature="e#17470#17471#0" expanded="false" />
+            <element signature="e#17947#17948#0" expanded="false" />
+            <element signature="e#17987#17988#0" expanded="false" />
+            <element signature="e#18478#18479#0" expanded="false" />
+            <element signature="e#18518#18519#0" expanded="false" />
+            <element signature="e#19031#19032#0" expanded="false" />
+            <element signature="e#19071#19072#0" expanded="false" />
+            <element signature="e#19523#19524#0" expanded="false" />
+            <element signature="e#19547#19548#0" expanded="false" />
+            <element signature="e#20593#20594#0" expanded="false" />
+            <element signature="e#20635#20636#0" expanded="false" />
+            <element signature="e#20978#20979#0" expanded="false" />
+            <element signature="e#21003#21004#0" expanded="false" />
+            <element signature="e#26772#26773#0" expanded="false" />
+            <element signature="e#26815#26816#0" expanded="false" />
+            <element signature="e#29026#29027#0" expanded="false" />
+            <element signature="e#29072#29073#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1761,13 +1770,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
           <caret line="58" column="4" lean-forward="false" selection-start-line="58" selection-start-column="4" selection-end-line="61" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentencepart/SentencePart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#856#857#0" expanded="false" />
+            <element signature="e#890#891#0" expanded="false" />
+            <element signature="e#1050#1051#0" expanded="false" />
+            <element signature="e#1078#1079#0" expanded="false" />
+            <element signature="e#1235#1236#0" expanded="false" />
+            <element signature="e#1269#1270#0" expanded="false" />
+            <element signature="e#1481#1482#0" expanded="false" />
+            <element signature="e#1522#1523#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1775,6 +1788,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1190">
           <caret line="98" column="11" lean-forward="false" selection-start-line="98" selection-start-column="11" selection-end-line="98" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#37085#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3871#3872#0" expanded="false" />
+            <element signature="e#3903#3904#0" expanded="false" />
+            <element signature="e#12964#12965#0" expanded="false" />
+            <element signature="e#12994#12995#0" expanded="false" />
+            <element signature="e#13313#13314#0" expanded="false" />
+            <element signature="e#13344#13345#0" expanded="false" />
+            <element signature="e#14765#14766#0" expanded="false" />
+            <element signature="e#14806#14807#0" expanded="false" />
+            <element signature="e#15583#15584#0" expanded="false" />
+            <element signature="e#15622#15623#0" expanded="false" />
+            <element signature="e#16522#16523#0" expanded="false" />
+            <element signature="e#16565#16566#0" expanded="false" />
+            <element signature="e#16934#16935#0" expanded="false" />
+            <element signature="e#16958#16959#0" expanded="false" />
+            <element signature="e#17430#17431#0" expanded="false" />
+            <element signature="e#17470#17471#0" expanded="false" />
+            <element signature="e#17947#17948#0" expanded="false" />
+            <element signature="e#17987#17988#0" expanded="false" />
+            <element signature="e#18478#18479#0" expanded="false" />
+            <element signature="e#18518#18519#0" expanded="false" />
+            <element signature="e#19031#19032#0" expanded="false" />
+            <element signature="e#19071#19072#0" expanded="false" />
+            <element signature="e#19523#19524#0" expanded="false" />
+            <element signature="e#19547#19548#0" expanded="false" />
+            <element signature="e#20593#20594#0" expanded="false" />
+            <element signature="e#20635#20636#0" expanded="false" />
+            <element signature="e#20978#20979#0" expanded="false" />
+            <element signature="e#21003#21004#0" expanded="false" />
+            <element signature="e#26772#26773#0" expanded="false" />
+            <element signature="e#26815#26816#0" expanded="false" />
+            <element signature="e#29026#29027#0" expanded="false" />
+            <element signature="e#29072#29073#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1816,54 +1865,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/io/TextWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="53" column="51" lean-forward="false" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
-          <folding>
-            <element signature="e#661#662#0" expanded="false" />
-            <element signature="e#692#693#0" expanded="false" />
-            <element signature="e#740#741#0" expanded="false" />
-            <element signature="e#780#781#0" expanded="false" />
-            <element signature="e#809#810#0" expanded="false" />
-            <element signature="e#836#837#0" expanded="false" />
-            <element signature="e#874#875#0" expanded="false" />
-            <element signature="e#906#907#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/view/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/view/impl/TextView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentence/Sentence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="42" column="56" lean-forward="false" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/io/TextReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="46" column="137" lean-forward="false" selection-start-line="46" selection-start-column="137" selection-end-line="46" selection-end-column="137" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1901,6 +1907,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="29" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentencepart/SentencePart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/io/TextWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="53" column="51" lean-forward="false" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/io/TextReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="46" column="137" lean-forward="false" selection-start-line="46" selection-start-column="137" selection-end-line="46" selection-end-column="137" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/view/impl/TextView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/kz/javalab/texthandling/text/entity/impl/sentence/Sentence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="42" column="56" lean-forward="false" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
           <folding />
         </state>
       </provider>
