@@ -33,7 +33,7 @@ public class TextParser {
     /**
      * Pattern for part of the sentences. Part of the sentence is considered as word plus any punctuation mark (including whitespace character).
      */
-    private static final Pattern SENTENCE_PART_PATTERN = Pattern.compile("[\\w]*[\\w'\\-)]?[)(,.?!—\\-]*[\\s]*[(]*[-—]*");
+    private static final Pattern SENTENCE_PART_PATTERN = Pattern.compile("[\\w]*[\\w'\\-)]?[\\s]*([?!\"#$%&'()*+,\\-.:;<=>@^_`[{|}]])*[\\s]*");
     /**
      * Pattern for words.
      */
@@ -41,11 +41,11 @@ public class TextParser {
     /**
      * Pattern for whitespace character.
      */
-    private static final Pattern WHITESPACE_PATTERN = Pattern.compile("\\s+");
+    private static final Pattern WHITESPACE_PATTERN = Pattern.compile("\\s");
     /**
      * Pattern for punctuation marks.
      */
-    private static final Pattern PUNCTUATION_PATTERN = Pattern.compile("([?!\"#$%&'()*+,\\-.:;<=>@^_`[{|}]])");
+    private static final Pattern PUNCTUATION_PATTERN = Pattern.compile("[\\s]*([?!\"#$%&'()*+,\\-.:;<=>@^_`[{|}]])");
 
     private TextParser() {
     }
@@ -68,26 +68,18 @@ public class TextParser {
 
     /**
      * Creates an instance of <Code>Text</Code> interface which is parsed from the string specified in constructor.
-     * @return Instance of <Code>Text</Code> interface parsed from the string.
+     * @return Instance of <Code>Text</Code> parsed from the string.
      */
     public Text parseText() {
-        CompoundText text = new CompoundText();
-
-        List<Paragraph> paragraphs = parseParagraphs(textAsString);
-
-        for (Paragraph paragraph : paragraphs) {
-            text.addParagraph(paragraph);
-        }
-
-        return text;
+        return this.parseText(textAsString);
     }
 
     /**
      * Creates an instance of <Code>Text</Code> interface which is parsed from the specified string.
      * @param textAsString String to be parsed.
-     * @return Instance of <Code>Text</Code> interface parsed from the string.
+     * @return Instance of <Code>Text</Code> parsed from the string.
      */
-    public Text parseText(String textAsString) {
+    private Text parseText(String textAsString) {
         CompoundText text = new CompoundText();
 
         List<Paragraph> paragraphs = parseParagraphs(textAsString);
@@ -104,7 +96,7 @@ public class TextParser {
      * @param textAsString String representation of text.
      * @return List of paragraphs parsed from the text.
      */
-    public List<Paragraph> parseParagraphs(String textAsString) {
+    private List<Paragraph> parseParagraphs(String textAsString) {
         List<Paragraph> paragraphs = new ArrayList<>();
 
         String[] paragraphsAsStrings = textAsString.split(PARAGRAPH_SPLIT_REGEX);
@@ -122,7 +114,7 @@ public class TextParser {
      * @param paragraphAsString String representation of paragraph.
      * @return List of sentences parsed from the string representation of paragraph.
      */
-    public List<Sentence> parseSentences(String paragraphAsString) {
+    private List<Sentence> parseSentences(String paragraphAsString) {
         List<String> sentencesAsStrings = new ArrayList<>();
         List<Sentence> sentences = new ArrayList<>();
 
@@ -146,7 +138,7 @@ public class TextParser {
      * @param sentenceAsString String representation of sentence.
      * @return List of sentence parts parsed from the string representation of sentence.
      */
-    public List<SentencePart> parseSentenceParts(String sentenceAsString) {
+    private List<SentencePart> parseSentenceParts(String sentenceAsString) {
         List<SentencePart> sentenceParts = new ArrayList<>();
 
         List<String> sentencePartsAsStrings = new ArrayList<>();
@@ -168,13 +160,17 @@ public class TextParser {
                 sentenceParts.add(word);
 
                 while (punctuationMatcher.find()) {
-                    PunctuationMark punctuationMark = parsePunctuation(punctuationMatcher.group().charAt(0));
-                    sentenceParts.add(punctuationMark);
+                    for (int index = 0; index < punctuationMatcher.group().length(); index++) {
+                        PunctuationMark punctuationMark = parsePunctuation(punctuationMatcher.group().charAt(index));
+                        sentenceParts.add(punctuationMark);
+                    }
                 }
 
                 while (whitespaceMatcher.find()) {
-                    PunctuationMark whitespace = parsePunctuation(whitespaceMatcher.group().charAt(0));
-                    sentenceParts.add(whitespace);
+                    for (int index = 0; index < whitespaceMatcher.group().length(); index++) {
+                        PunctuationMark whitespace = parsePunctuation(whitespaceMatcher.group().charAt(index));
+                        sentenceParts.add(whitespace);
+                    }
                 }
             }
 
@@ -188,7 +184,7 @@ public class TextParser {
      * @param wordAsString String representation of word.
      * @return Instance of <Code>Word</Code> class parsed from the string representation of word.
      */
-    public Word parseWord(String wordAsString) {
+    private Word parseWord(String wordAsString) {
         List<Symbol> symbols = new ArrayList<>();
 
         for (int index = 0; index < wordAsString.length(); index++) {
@@ -204,7 +200,7 @@ public class TextParser {
      * @param punctuation String representation of punctuation marks.
      * @return Instance of <Code>PunctuationMark</Code> class parsed from the string representation of punctuation marks.
      */
-    public PunctuationMark parsePunctuation(Character punctuation) {
+    private PunctuationMark parsePunctuation(Character punctuation) {
         Symbol symbol = new Symbol(punctuation);
 
         return new PunctuationMark(symbol);
@@ -215,7 +211,7 @@ public class TextParser {
      * @param symbolValue Character to be parsed.
      * @return Instance of <Code>Symbol</Code> class parsed from the <Ccode>Character</Ccode> representation of symbol.
      */
-    public Symbol parseSymbol(Character symbolValue) {
+    private Symbol parseSymbol(Character symbolValue) {
         return new Symbol(symbolValue);
     }
 }

@@ -40,7 +40,7 @@ public class Sentence implements Text {
     }
 
     /**
-     *
+     * Allows to set new sentence parts to the sentence.
      * @param sentenceParts
      */
     public void setSentenceParts(List<SentencePart> sentenceParts) {

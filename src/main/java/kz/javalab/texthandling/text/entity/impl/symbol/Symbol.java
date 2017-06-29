@@ -14,7 +14,7 @@ public class Symbol implements Text {
     private Character value;
 
     /**
-     * Creates an instance of <Code>Word</Code>.
+     * Creates an instance of <Code>Symbol</Code>.
      */
     public Symbol() {
     }
@@ -50,7 +50,7 @@ public class Symbol implements Text {
     @Override
     public String getContent() {
         StringBuffer stringBuffer = new StringBuffer();
-
+        
         stringBuffer.append(value);
 
         return stringBuffer.toString();

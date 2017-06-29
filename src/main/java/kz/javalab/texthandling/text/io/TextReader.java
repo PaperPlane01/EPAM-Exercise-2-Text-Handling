@@ -44,9 +44,9 @@ public class TextReader {
     }
 
     /**
-     * Reads text from the file and creates <Code>Text</Code> instance from it. The text parsing is delegated to <Code>TextParser</Code>
+     * Reads text from the file and creates <Code>Text</Code> instance from it. The text parsing is delegated to <Code>TextParser</Code>.
      * @return Parsed text.
-     * @throws IOException If something went wrong...
+     * @throws IOException If something went wrong.
      */
     public Text readText() throws IOException {
         StringBuffer stringBuffer = new StringBuffer();

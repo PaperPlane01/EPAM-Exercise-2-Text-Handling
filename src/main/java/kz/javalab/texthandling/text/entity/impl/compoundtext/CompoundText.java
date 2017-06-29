@@ -32,6 +32,14 @@ public class CompoundText implements Text {
         this.paragraphs = paragraphs;
     }
 
+    public List<Paragraph> getParagraphs() {
+        return paragraphs;
+    }
+
+    public void setParagraphs(List<Paragraph> paragraphs) {
+        this.paragraphs = paragraphs;
+    }
+
     /**
      * Allows to add a new paragraph to the text.
      * @param paragraph Paragraph to be added.
