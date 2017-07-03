@@ -1,4 +1,4 @@
-package kz.javalab.texthandling.text.view;
+package kz.javalab.texthandling.view;
 
 public interface View {
 

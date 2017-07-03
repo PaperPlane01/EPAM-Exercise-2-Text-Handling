@@ -3,8 +3,7 @@ package kz.javalab.texthandling.app;
 import kz.javalab.texthandling.text.entity.Text;
 import kz.javalab.texthandling.text.io.TextReader;
 import kz.javalab.texthandling.text.io.TextWriter;
-import kz.javalab.texthandling.text.parser.TextParser;
-import kz.javalab.texthandling.text.view.impl.TextView;
+import kz.javalab.texthandling.view.impl.TextView;
 
 import java.io.IOException;
 
