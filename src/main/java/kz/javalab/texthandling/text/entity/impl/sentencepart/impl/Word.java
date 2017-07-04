@@ -1,16 +1,16 @@
-package kz.javalab.texthandling.text.entity.impl.sentencepart.impl.word;
+package kz.javalab.texthandling.text.entity.impl.sentencepart.impl;
 
 
 import kz.javalab.texthandling.text.entity.Text;
-import kz.javalab.texthandling.text.entity.impl.symbol.Symbol;
+import kz.javalab.texthandling.text.entity.impl.Symbol;
 import kz.javalab.texthandling.text.entity.impl.sentencepart.SentencePart;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class represents a word.
- */
+        * This class represents a word.
+        */
 public class Word extends SentencePart implements Text {
 
     /**
@@ -46,6 +46,18 @@ public class Word extends SentencePart implements Text {
      */
     public void setSymbols(List<Symbol> symbols) {
         this.symbols = symbols;
+    }
+
+    public Symbol getLetterAt(int index) {
+        return symbols.get(index);
+    }
+
+    public void setLetterAt(int index, Symbol letter) {
+        symbols.set(index, letter);
+    }
+
+    public int getLength() {
+        return symbols.size();
     }
 
     /**

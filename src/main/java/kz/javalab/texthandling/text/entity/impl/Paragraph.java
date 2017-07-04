@@ -1,8 +1,7 @@
-package kz.javalab.texthandling.text.entity.impl.paragraph;
+package kz.javalab.texthandling.text.entity.impl;
 
 
 import kz.javalab.texthandling.text.entity.Text;
-import kz.javalab.texthandling.text.entity.impl.sentence.Sentence;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +76,6 @@ public class Paragraph implements Text {
 
         for (Sentence sentence : sentences) {
             stringBuffer.append(sentence.getContent());
-            stringBuffer.append(" ");
         }
 
         return stringBuffer.toString();

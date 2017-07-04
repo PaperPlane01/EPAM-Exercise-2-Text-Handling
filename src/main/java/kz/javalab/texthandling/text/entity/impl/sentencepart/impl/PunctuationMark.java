@@ -1,10 +1,8 @@
-package kz.javalab.texthandling.text.entity.impl.sentencepart.impl.punctuation;
+package kz.javalab.texthandling.text.entity.impl.sentencepart.impl;
 
 import kz.javalab.texthandling.text.entity.Text;
+import kz.javalab.texthandling.text.entity.impl.Symbol;
 import kz.javalab.texthandling.text.entity.impl.sentencepart.SentencePart;
-import kz.javalab.texthandling.text.entity.impl.symbol.Symbol;
-
-import java.util.List;
 
 
 /**

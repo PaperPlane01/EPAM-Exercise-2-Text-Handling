@@ -1,4 +1,4 @@
-package kz.javalab.texthandling.text.entity.impl.symbol;
+package kz.javalab.texthandling.text.entity.impl;
 
 
 import kz.javalab.texthandling.text.entity.Text;

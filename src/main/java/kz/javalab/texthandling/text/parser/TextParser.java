@@ -1,13 +1,13 @@
 package kz.javalab.texthandling.text.parser;
 
 import kz.javalab.texthandling.text.entity.Text;
-import kz.javalab.texthandling.text.entity.impl.compoundtext.CompoundText;
-import kz.javalab.texthandling.text.entity.impl.paragraph.Paragraph;
-import kz.javalab.texthandling.text.entity.impl.sentence.Sentence;
+import kz.javalab.texthandling.text.entity.impl.CompoundText;
+import kz.javalab.texthandling.text.entity.impl.Paragraph;
+import kz.javalab.texthandling.text.entity.impl.Sentence;
 import kz.javalab.texthandling.text.entity.impl.sentencepart.SentencePart;
-import kz.javalab.texthandling.text.entity.impl.sentencepart.impl.punctuation.PunctuationMark;
-import kz.javalab.texthandling.text.entity.impl.sentencepart.impl.word.Word;
-import kz.javalab.texthandling.text.entity.impl.symbol.Symbol;
+import kz.javalab.texthandling.text.entity.impl.sentencepart.impl.PunctuationMark;
+import kz.javalab.texthandling.text.entity.impl.Symbol;
+import kz.javalab.texthandling.text.entity.impl.sentencepart.impl.Word;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,31 +21,26 @@ public class TextParser {
      * String to be parsed.
      */
     private String textAsString;
-
     /**
-     * Regular expression for splitting text information to paragraphs.
+     * Pattern for paragraphs.
      */
-    private static final String PARAGRAPH_SPLIT_REGEX = "\n";
+    private static final Pattern PARAGRAPH_PATTERN = Pattern.compile(".*[\\n]*", Pattern.MULTILINE | Pattern.COMMENTS);
     /**
      * Pattern for sentences.
      */
-    private static final Pattern SENTENCE_PATTERN = Pattern.compile("[^.!?\\s][^.!?]*(?:[.!?](?!['\"]?\\s|$)[^:.!?]*)*[.!?]?['\"]?(?=|$)\n", Pattern.MULTILINE | Pattern.COMMENTS);
+    private static final Pattern SENTENCE_PATTERN = Pattern.compile("[^.!?\\s][^.!?]*(?:[.!?](?!['\"]?\\s|$)[^:.!?]*)*[.!?]?['\"]?[\\s]*(?=|[\\n\\s]*$)", Pattern.MULTILINE | Pattern.COMMENTS);
     /**
      * Pattern for part of the sentences. Part of the sentence is considered as word plus any punctuation mark (including whitespace character).
      */
-    private static final Pattern SENTENCE_PART_PATTERN = Pattern.compile("[\\w]*[\\w'\\-)]?[\\s]*([?!\"#$%&'()*+,\\-.:;<=>@^_`[{|}]])*[\\s]*");
+    private static final Pattern SENTENCE_PART_PATTERN = Pattern.compile("[\\w]*[\\w'\\-)]?[\\s]*([?!\"#$%&'()*+,\\-.:;<=>@^_`[{|}]])*[\\s]*[\\n]*");
     /**
      * Pattern for words.
      */
     private static final Pattern WORD_PATTERN = Pattern.compile("((\\b[^\\s]+\\b)((?<=\\.[\\w\\-']).)?)");
     /**
-     * Pattern for whitespace character.
-     */
-    private static final Pattern WHITESPACE_PATTERN = Pattern.compile("\\s");
-    /**
      * Pattern for punctuation marks.
      */
-    private static final Pattern PUNCTUATION_PATTERN = Pattern.compile("[\\s]*([?!\"#$%&'()*+,\\-.:;<=>@^_`[{|}]])");
+    private static final Pattern PUNCTUATION_PATTERN = Pattern.compile("([\\s?!\\\"#$%&'()*+,\\-.:;<=>@^_`[{|}]])");
 
     private TextParser() {
     }
@@ -84,9 +79,7 @@ public class TextParser {
 
         List<Paragraph> paragraphs = parseParagraphs(textAsString);
 
-        for (Paragraph paragraph : paragraphs) {
-            text.addParagraph(paragraph);
-        }
+        text.setParagraphs(paragraphs);
 
         return text;
     }
@@ -97,12 +90,19 @@ public class TextParser {
      * @return List of paragraphs parsed from the text.
      */
     private List<Paragraph> parseParagraphs(String textAsString) {
+        List<String> paragraphsAsStrings = new ArrayList<>();
         List<Paragraph> paragraphs = new ArrayList<>();
 
-        String[] paragraphsAsStrings = textAsString.split(PARAGRAPH_SPLIT_REGEX);
+        Matcher paragraphMatcher = PARAGRAPH_PATTERN.matcher(textAsString);
+
+        while (paragraphMatcher.find()) {
+            paragraphsAsStrings.add(paragraphMatcher.group());
+        }
 
         for (String paragraphAsString : paragraphsAsStrings) {
-            Paragraph paragraph = new Paragraph(parseSentences(paragraphAsString));
+            Paragraph paragraph = new Paragraph();
+            List<Sentence> sentences = parseSentences(paragraphAsString);
+            paragraph.setSentences(sentences);
             paragraphs.add(paragraph);
         }
 
@@ -153,7 +153,6 @@ public class TextParser {
 
             Matcher wordMatcher = WORD_PATTERN.matcher(sentencePartAsString);
             Matcher punctuationMatcher = PUNCTUATION_PATTERN.matcher(sentencePartAsString);
-            Matcher whitespaceMatcher = WHITESPACE_PATTERN.matcher(sentencePartAsString);
 
             while (wordMatcher.find()) {
                 Word word = parseWord(wordMatcher.group());
@@ -166,12 +165,6 @@ public class TextParser {
                     }
                 }
 
-                while (whitespaceMatcher.find()) {
-                    for (int index = 0; index < whitespaceMatcher.group().length(); index++) {
-                        PunctuationMark whitespace = parsePunctuation(whitespaceMatcher.group().charAt(index));
-                        sentenceParts.add(whitespace);
-                    }
-                }
             }
 
         }

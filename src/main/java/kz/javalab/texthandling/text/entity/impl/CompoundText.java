@@ -1,7 +1,6 @@
-package kz.javalab.texthandling.text.entity.impl.compoundtext;
+package kz.javalab.texthandling.text.entity.impl;
 
 import kz.javalab.texthandling.text.entity.Text;
-import kz.javalab.texthandling.text.entity.impl.paragraph.Paragraph;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +29,10 @@ public class CompoundText implements Text {
      */
     public CompoundText(List<Paragraph> paragraphs) {
         this.paragraphs = paragraphs;
+    }
+
+    public int getNumberOfParagraphs() {
+        return this.paragraphs.size();
     }
 
     public List<Paragraph> getParagraphs() {
@@ -68,9 +71,8 @@ public class CompoundText implements Text {
     public String getContent() {
         StringBuffer stringBuffer = new StringBuffer();
 
-        for (Text paragraph : paragraphs) {
+        for (Paragraph paragraph : paragraphs) {
             stringBuffer.append(paragraph.getContent());
-            stringBuffer.append("\n");
         }
 
         return stringBuffer.toString();
