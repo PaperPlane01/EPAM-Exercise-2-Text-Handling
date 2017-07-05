@@ -32,7 +32,7 @@ public class TextParser {
     /**
      * Pattern for part of the sentences. Part of the sentence is considered as word plus any punctuation mark (including whitespace character).
      */
-    private static final Pattern SENTENCE_PART_PATTERN = Pattern.compile("[\\w]*[\\w'\\-)]?[\\s]*([?!\"#$%&'()*+,\\-.:;<=>@^_`[{|}]])*[\\s]*[\\n]*");
+    private static final Pattern SENTENCE_PART_PATTERN = Pattern.compile("[\\wа-яА-ЯёЁ]*[\\w'а-яА-ЯёЁ\\-)]?[\\s]*([?!…\"#$%&'().«»*–—+,\\-.:;<=>@^_`[{|}]])*[\\s]*[\\n]*");
     /**
      * Pattern for words.
      */
@@ -40,7 +40,7 @@ public class TextParser {
     /**
      * Pattern for punctuation marks.
      */
-    private static final Pattern PUNCTUATION_PATTERN = Pattern.compile("([\\s?!\\\"#$%&'()*+,\\-.:;<=>@^_`[{|}]])");
+    private static final Pattern PUNCTUATION_PATTERN = Pattern.compile("([\\s?!…\\\"#$%&'().«»*–—+,\\-:;<=>@^_`[{|}]])");
 
     private TextParser() {
     }

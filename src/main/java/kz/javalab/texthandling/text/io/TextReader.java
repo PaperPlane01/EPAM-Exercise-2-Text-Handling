@@ -6,6 +6,7 @@ import kz.javalab.texthandling.text.parser.TextParser;
 
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -51,7 +52,7 @@ public class TextReader {
     public Text readText() throws IOException {
         StringBuffer stringBuffer = new StringBuffer();
 
-        List<String> lines = Files.lines(Paths.get(filePath)).collect(Collectors.toList());
+        List<String> lines = Files.lines(Paths.get(filePath), Charset.forName("UTF-8")).collect(Collectors.toList());
 
         lines.forEach(line -> stringBuffer.append(line).append("\n"));
 

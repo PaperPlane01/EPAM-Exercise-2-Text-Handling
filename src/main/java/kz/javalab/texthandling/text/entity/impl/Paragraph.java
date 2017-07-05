@@ -59,11 +59,7 @@ public class Paragraph implements Text {
      * @param index Index of the sentence which is to be removed.
      */
     public void removeSentence(int index) {
-        try {
-            sentences.remove(index);
-        } catch (IndexOutOfBoundsException ex) {
-            ex.printStackTrace();
-        }
+        sentences.remove(index);
     }
 
     /**
