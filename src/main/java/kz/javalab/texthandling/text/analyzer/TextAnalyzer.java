@@ -28,6 +28,10 @@ public class TextAnalyzer {
         this.text = text;
     }
 
+    public int getNumberOfWords() {
+        return getListOfWordsContainedInText().size();
+    }
+
     public List<Word> getListOfWordsWithMinimumLength() {
         List<Word> wordsContainedInText = getListOfWordsContainedInText();
         List<Word> wordsWithMinimumLength = new ArrayList<>();

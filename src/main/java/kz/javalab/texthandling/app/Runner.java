@@ -1,10 +1,12 @@
 package kz.javalab.texthandling.app;
 
+import kz.javalab.texthandling.telegram.entity.Telegram;
 import kz.javalab.texthandling.text.analyzer.TextAnalyzer;
 import kz.javalab.texthandling.text.entity.Text;
 import kz.javalab.texthandling.text.entity.impl.CompoundText;
 import kz.javalab.texthandling.text.io.TextReader;
 import kz.javalab.texthandling.text.io.TextWriter;
+import kz.javalab.texthandling.view.impl.TelegramView;
 import kz.javalab.texthandling.view.impl.TextAnalyzerView;
 import kz.javalab.texthandling.view.impl.TextView;
 
@@ -20,16 +22,13 @@ public class Runner {
         TextReader textReader = new TextReader(INPUT_TEXT_FILE);
 
         Text text = textReader.readText();
-
-        TextView textView = new TextView(text);
-        textView.show();
-
+        
         TextWriter textWriter = new TextWriter(OUTPUT_TEXT_FILE, text);
         textWriter.writeText();
 
-        TextAnalyzer textAnalyzer = new TextAnalyzer((CompoundText) text);
-        TextAnalyzerView textAnalyzerView = new TextAnalyzerView(textAnalyzer);
-
-        textAnalyzerView.show();
+        int pricePerWord = 100;
+        Telegram telegram = new Telegram((CompoundText) text, pricePerWord);
+        TelegramView telegramView = new TelegramView(telegram);
+        telegramView.show();
     }
 }
