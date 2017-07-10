@@ -5,10 +5,12 @@ import kz.javalab.texthandling.text.entity.Text;
 import kz.javalab.texthandling.text.parser.TextParser;
 
 
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -47,17 +49,29 @@ public class TextReader {
     /**
      * Reads text from the file and creates <Code>Text</Code> instance from it. The text parsing is delegated to <Code>TextParser</Code>.
      * @return Parsed text.
-     * @throws IOException If something went wrong.
      */
-    public Text readText() throws IOException {
+    public Text readText()  {
         StringBuffer stringBuffer = new StringBuffer();
 
-        List<String> lines = Files.lines(Paths.get(filePath), Charset.forName("UTF-8")).collect(Collectors.toList());
+        FileReader fileReader = null;
 
-        lines.forEach(line -> stringBuffer.append(line).append("\n"));
+        try {
+            fileReader = new FileReader(filePath);
+            int characterCode;
 
-        TextParser textParser = new TextParser(stringBuffer.toString());
+            while ((characterCode = fileReader.read()) != -1) {
+                stringBuffer.append((char) characterCode);
+            }
 
-        return textParser.parseText();
+            fileReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        return (new TextParser(stringBuffer.toString())).parseText();
+
     }
 }

@@ -24,7 +24,7 @@ public class TextParser {
     /**
      * Pattern for paragraphs.
      */
-    private static final Pattern PARAGRAPH_PATTERN = Pattern.compile(".*[\\n]*", Pattern.MULTILINE | Pattern.COMMENTS);
+    private static final Pattern PARAGRAPH_PATTERN = Pattern.compile(".*[\\n\\r]*", Pattern.MULTILINE | Pattern.COMMENTS);
     /**
      * Pattern for sentences.
      */

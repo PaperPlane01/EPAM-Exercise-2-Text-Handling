@@ -51,19 +51,17 @@ public class TextWriter {
 
     /**
      * Writes instance of <Code>Text</Code> to the file.
-     * @throws IOException If something went wrong.
      */
-    public void writeText() throws IOException {
+    public void writeText()  {
 
-        BufferedReader bufferedReader = new BufferedReader(new StringReader(text.getContent()));
-        PrintWriter printWriter = new PrintWriter(new FileWriter(filePath));
+        FileWriter fileWriter = null;
 
-        bufferedReader.lines().forEach(line -> printWriter.println(line));
-
-        printWriter.flush();
-        printWriter.close();
-
-        bufferedReader.close();
-
+        try {
+            fileWriter = new FileWriter(filePath);
+            fileWriter.write(text.getContent());
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

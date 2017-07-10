@@ -34,7 +34,7 @@ public class TextAnalyzerView implements View {
 
     private void showListOfWordsWithMinimumLength() {
         List<Word> wordsWithMinimumLength = textAnalyzer.getListOfWordsWithMinimumLength();
-        showMessage("List of words with minimum length: ");
+        System.out.println("List of words with minimum length: ");
 
         for (Word word : wordsWithMinimumLength) {
             TextView textView = new TextView(word);
@@ -44,15 +44,12 @@ public class TextAnalyzerView implements View {
 
     private void showListOfWordsWithMaximumLength() {
         List<Word> wordsWithMaximumLength = textAnalyzer.getListOfWordsWithMaximumLength();
-        showMessage("List of words with maximum length: ");
+        System.out.println("List of words with maximum length: ");
 
         for (Word word : wordsWithMaximumLength) {
             TextView textView = new TextView(word);
             textView.show();
         }
     }
-
-    private void showMessage(String message) {
-        System.out.println(message);
-    }
+    
 }

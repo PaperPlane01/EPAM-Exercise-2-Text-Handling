@@ -4,17 +4,28 @@ import kz.javalab.texthandling.text.analyzer.TextAnalyzer;
 import kz.javalab.texthandling.text.entity.impl.CompoundText;
 
 /**
- * Created by Администратор on 10.07.2017.
+ * CLass representing telegram.
  */
 public class Telegram {
 
+    /**
+     * Content of the telegram.
+     */
     private CompoundText content = new CompoundText();
-    private int pricePerWord;
+    /**
+     * Price per word.
+     */
+    private double pricePerWord;
 
     public Telegram() {
     }
 
-    public Telegram(CompoundText content, int pricePerWord) {
+    /**
+     * Creates an instance of <Code>Telegram</Code> with specified content and price per word.
+     * @param content Content of the telegram.
+     * @param pricePerWord Price per word.
+     */
+    public Telegram(CompoundText content, double pricePerWord) {
         this.content = content;
         this.pricePerWord = pricePerWord;
     }
@@ -27,15 +38,19 @@ public class Telegram {
         this.content = content;
     }
 
-    public int getPricePerWord() {
+    public double getPricePerWord() {
         return pricePerWord;
     }
 
-    public void setPricePerWord(int pricePerWord) {
+    public void setPricePerWord(double pricePerWord) {
         this.pricePerWord = pricePerWord;
     }
 
-    public int getPrice() {
+    /**
+     * Counts and returns price of the telegram.
+     * @return Price of the telegram.
+     */
+    public double getPrice() {
         TextAnalyzer textAnalyzer = new TextAnalyzer(content);
         int numberOfWords = textAnalyzer.getNumberOfWords();
         return numberOfWords * pricePerWord;

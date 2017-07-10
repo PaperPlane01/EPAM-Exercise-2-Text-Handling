@@ -10,7 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * This class is designated for analyzing the text.
+ */
 public class TextAnalyzer {
+    /**
+     * Text to be analyzed.
+     */
     private CompoundText text = new CompoundText();
 
     public TextAnalyzer() {
@@ -28,40 +34,56 @@ public class TextAnalyzer {
         this.text = text;
     }
 
+    /**
+     * Allows to know how many words are contained in the text.
+     * @return Number of words contained in text.
+     */
     public int getNumberOfWords() {
         return getListOfWordsContainedInText().size();
     }
 
-    public List<Word> getListOfWordsWithMinimumLength() {
+    /**
+     * Returns list of shortest words.
+     * @return List of shortest words.
+     */
+    public List<Word> getListOfShortestWords() {
         List<Word> wordsContainedInText = getListOfWordsContainedInText();
-        List<Word> wordsWithMinimumLength = new ArrayList<>();
+        List<Word> shortestWords = new ArrayList<>();
 
         int minimumLength = countMinimumLengthOfWord();
 
         for (Word word: wordsContainedInText) {
             if (word.getLength() == minimumLength) {
-                wordsWithMinimumLength.add(word);
+                shortestWords.add(word);
             }
         }
 
-        return wordsWithMinimumLength;
+        return shortestWords;
     }
 
-    public List<Word> getListOfWordsWithMaximumLength() {
+    /**
+     * Returns the list of longest words.
+     * @return List of longest words.
+     */
+    public List<Word> getListOfLongestWords() {
         List<Word> wordsContainedInText = getListOfWordsContainedInText();
-        List<Word> wordsWithMaximumLength = new ArrayList<>();
+        List<Word> longestWords = new ArrayList<>();
 
         int maximumLength = countMaximumLengthOfWord();
 
         for (Word word : wordsContainedInText) {
             if (word.getLength() == maximumLength) {
-                wordsWithMaximumLength.add(word);
+                longestWords.add(word);
             }
         }
 
-        return wordsWithMaximumLength;
+        return longestWords;
     }
 
+    /**
+     * Counts the minimum length of word.
+     * @return Minimum length of word.
+     */
     private int countMinimumLengthOfWord() {
         List<Word> words = getListOfWordsContainedInText();
 
@@ -76,6 +98,10 @@ public class TextAnalyzer {
         return  shortestWord.getLength();
     }
 
+    /**
+     * Counts the maximum length of word.
+     * @return Maximum length of word.
+     */
     private int countMaximumLengthOfWord() {
         List<Word> words = getListOfWordsContainedInText();
 

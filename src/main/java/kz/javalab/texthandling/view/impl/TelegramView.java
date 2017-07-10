@@ -1,6 +1,7 @@
 package kz.javalab.texthandling.view.impl;
 
 import kz.javalab.texthandling.telegram.entity.Telegram;
+import kz.javalab.texthandling.text.analyzer.TextAnalyzer;
 import kz.javalab.texthandling.view.View;
 
 /**
@@ -27,15 +28,16 @@ public class TelegramView implements View {
 
     @Override
     public void show() {
-        showMessage("Telegram's content:\n");
+        System.out.println("Telegram's content:");
         (new TextView(telegram.getContent())).show();
-        showMessage("Telegram's full price:\n");
-        showMessage(Integer.toString(telegram.getPrice()) + "\n");
-        showMessage("Telegram's price per word:\n");
-        showMessage(Integer.toString(telegram.getPricePerWord()));
+        System.out.println("\n");
+        System.out.println("Telegram's full price:");
+        System.out.println(telegram.getPrice());
+        System.out.println("Telegram's price per word:");
+        System.out.println(telegram.getPricePerWord());
+        System.out.println("Words contained in telegram:");
+        System.out.println(new TextAnalyzer(telegram.getContent()).getNumberOfWords());
     }
 
-    private void showMessage(String message) {
-        System.out.println(message);
-    }
+    
 }
