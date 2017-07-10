@@ -63,28 +63,17 @@ public class Paragraph implements Text {
     }
 
     /**
-     * Creates string representation of content of the paragraph.
-     * @return String representation of content of the paragraph.
-     */
-    @Override
-    public String getContent() {
-        StringBuffer stringBuffer = new StringBuffer();
-
-        for (Sentence sentence : sentences) {
-            stringBuffer.append(sentence.getContent());
-        }
-
-        return stringBuffer.toString();
-    }
-
-    /**
      * Creates a string representation of <Code>Paragraph</Code> instance.
      * @return String representation of <Code>Paragraph</Code> instance.
      */
     @Override
     public String toString() {
-        return "Paragraph{" +
-                "sentences=" + sentences +
-                '}';
+        StringBuffer stringBuffer = new StringBuffer();
+
+        for (Sentence sentence : sentences) {
+            stringBuffer.append(sentence.toString());
+        }
+
+        return stringBuffer.toString();
     }
 }

@@ -47,21 +47,15 @@ public class Sentence implements Text {
         this.sentenceParts = sentenceParts;
     }
 
-    @Override
-    public String getContent() {
-        StringBuffer stringBuffer = new StringBuffer();
-
-        for (SentencePart sentencePart : sentenceParts) {
-            stringBuffer.append(sentencePart.getContent());
-        }
-
-        return stringBuffer.toString();
-    }
 
     @Override
     public String toString() {
-        return "Sentence{" +
-                "sentenceParts=" + sentenceParts +
-                '}';
+        StringBuffer stringBuffer = new StringBuffer();
+
+        for (SentencePart sentencePart : sentenceParts) {
+            stringBuffer.append(sentencePart.toString());
+        }
+
+        return stringBuffer.toString();
     }
 }

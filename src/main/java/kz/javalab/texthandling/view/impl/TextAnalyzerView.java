@@ -7,6 +7,9 @@ import kz.javalab.texthandling.view.View;
 
 import java.util.List;
 
+/**
+ * This class is designated to visually represent content of <Code>TextAnalyzer</Code> instance.
+ */
 public class TextAnalyzerView implements View {
 
     private TextAnalyzer textAnalyzer = new TextAnalyzer();
@@ -28,25 +31,25 @@ public class TextAnalyzerView implements View {
 
     @Override
     public void show() {
-        showListOfWordsWithMinimumLength();
-        showListOfWordsWithMaximumLength();
+        showListOfShortestWords();
+        showListOfLongestWords();
     }
 
-    private void showListOfWordsWithMinimumLength() {
-        List<Word> wordsWithMinimumLength = textAnalyzer.getListOfWordsWithMinimumLength();
-        System.out.println("List of words with minimum length: ");
+    private void showListOfShortestWords() {
+        List<Word> shortestWords = textAnalyzer.getListOfShortestWords();
+        System.out.println("List of shortest words : ");
 
-        for (Word word : wordsWithMinimumLength) {
+        for (Word word : shortestWords) {
             TextView textView = new TextView(word);
             textView.show();
         }
     }
 
-    private void showListOfWordsWithMaximumLength() {
-        List<Word> wordsWithMaximumLength = textAnalyzer.getListOfWordsWithMaximumLength();
-        System.out.println("List of words with maximum length: ");
+    private void showListOfLongestWords() {
+        List<Word> listOfLongestWords = textAnalyzer.getListOfLongestWords();
+        System.out.println("List of longest words: ");
 
-        for (Word word : wordsWithMaximumLength) {
+        for (Word word : listOfLongestWords) {
             TextView textView = new TextView(word);
             textView.show();
         }

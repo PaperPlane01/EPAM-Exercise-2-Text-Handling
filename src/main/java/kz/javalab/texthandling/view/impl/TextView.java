@@ -9,22 +9,22 @@ import kz.javalab.texthandling.view.View;
  */
 public class TextView implements View {
 
-    private Text model;
+    private Text text;
 
     public TextView() {
 
     }
 
-    public TextView(Text model) {
-        this.model = model;
+    public TextView(Text text) {
+        this.text = text;
     }
 
-    public Text getModel() {
-        return model;
+    public Text getText() {
+        return text;
     }
 
-    public void setModel(Text model) {
-        this.model = model;
+    public void setText(Text text) {
+        this.text = text;
     }
 
     /**
@@ -32,6 +32,6 @@ public class TextView implements View {
      */
     @Override
     public void show() {
-        System.out.println(model.getContent());
+        System.out.println(text);
     }
 }

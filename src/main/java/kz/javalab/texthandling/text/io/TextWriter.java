@@ -4,6 +4,7 @@ package kz.javalab.texthandling.text.io;
 import kz.javalab.texthandling.text.entity.Text;
 
 import java.io.*;
+import java.nio.charset.Charset;
 
 /**
  * Writes instance of <Code>Text</Code> to the file.
@@ -54,12 +55,13 @@ public class TextWriter {
      */
     public void writeText()  {
 
-        FileWriter fileWriter = null;
+        BufferedWriter bufferedWriter = null;
 
         try {
-            fileWriter = new FileWriter(filePath);
-            fileWriter.write(text.getContent());
-            fileWriter.close();
+           bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filePath),
+                    Charset.forName("UTF-8")));
+           bufferedWriter.write(text.toString());
+           bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

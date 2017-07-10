@@ -7,12 +7,6 @@ import kz.javalab.texthandling.text.parser.TextParser;
 
 import java.io.*;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Reads text from the file and creates <Code>Text</Code> instance from it. The text parsing is delegated to <Code>TextParser</Code>.
@@ -53,17 +47,18 @@ public class TextReader {
     public Text readText()  {
         StringBuffer stringBuffer = new StringBuffer();
 
-        FileReader fileReader = null;
+        BufferedReader bufferedReader = null;
 
         try {
-            fileReader = new FileReader(filePath);
+            bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath),
+                    Charset.forName("UTF-8")));
             int characterCode;
 
-            while ((characterCode = fileReader.read()) != -1) {
+            while ((characterCode = bufferedReader.read()) != -1) {
                 stringBuffer.append((char) characterCode);
             }
 
-            fileReader.close();
+            bufferedReader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

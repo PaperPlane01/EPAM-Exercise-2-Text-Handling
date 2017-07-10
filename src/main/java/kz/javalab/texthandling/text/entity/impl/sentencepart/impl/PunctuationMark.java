@@ -8,7 +8,7 @@ import kz.javalab.texthandling.text.entity.impl.sentencepart.SentencePart;
 /**
  * This class represents a punctuation mark (whitespace character is also included) of the sentense.
  */
-public class PunctuationMark extends SentencePart implements Text {
+public class PunctuationMark implements SentencePart {
 
     /**
      * Value of the punctuation mark.
@@ -46,22 +46,11 @@ public class PunctuationMark extends SentencePart implements Text {
     }
 
     /**
-     * Creates a string representation of content of the punctuation mark.
-     * @return String representation of content of the punctuation mark.
-     */
-    @Override
-    public String getContent() {
-        return value.getContent();
-    }
-
-    /**
      * Creates a string representation of <Code>PunctuationMark</Code> instance.
      * @return String representation of <Code>PunctuationMark</Code> instance.
      */
     @Override
     public String toString() {
-        return "PunctuationMark{" +
-                "value=" + value +
-                '}';
+        return value.toString();
     }
 }

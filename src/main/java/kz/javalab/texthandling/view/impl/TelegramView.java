@@ -4,8 +4,9 @@ import kz.javalab.texthandling.telegram.entity.Telegram;
 import kz.javalab.texthandling.text.analyzer.TextAnalyzer;
 import kz.javalab.texthandling.view.View;
 
+
 /**
- * Created by Администратор on 10.07.2017.
+ * This class is designated to visually represent content of <Code>Telegram</Code> instance.
  */
 public class TelegramView implements View {
 

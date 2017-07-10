@@ -11,7 +11,7 @@ import java.util.List;
 /**
         * This class represents a word.
         */
-public class Word extends SentencePart implements Text {
+public class Word implements SentencePart {
 
     /**
      * Symbols of the word.
@@ -61,28 +61,17 @@ public class Word extends SentencePart implements Text {
     }
 
     /**
-     * Creates a string representation of content of the word.
-     * @return String representation of content of the word.
-     */
-    @Override
-    public String getContent() {
-        StringBuffer stringBuffer = new StringBuffer();
-
-        for (Symbol symbol : symbols) {
-            stringBuffer.append(symbol.getContent());
-        }
-
-        return stringBuffer.toString();
-    }
-
-    /**
      * Creates a string representation of <Code>Word</Code> instance.
      * @return String representation of <Code>Word</Code> instance.
      */
     @Override
     public String toString() {
-        return "Word{" +
-                "symbols=" + symbols +
-                '}';
+        StringBuffer stringBuffer = new StringBuffer();
+
+        for (Symbol symbol : symbols) {
+            stringBuffer.append(symbol.toString());
+        }
+
+        return stringBuffer.toString();
     }
 }

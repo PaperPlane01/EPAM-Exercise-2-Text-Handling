@@ -64,29 +64,18 @@ public class CompoundText implements Text {
     }
 
     /**
-     * Creates string representation of content of the text.
-     * @return Content of the text represented as string.
-     */
-    @Override
-    public String getContent() {
-        StringBuffer stringBuffer = new StringBuffer();
-
-        for (Paragraph paragraph : paragraphs) {
-            stringBuffer.append(paragraph.getContent());
-        }
-
-        return stringBuffer.toString();
-    }
-
-    /**
      * Creates a string representation of <Code>CompoundText</Code> instance.
      * @return String representation of <Code>CompoundText</Code> instance.
      */
     @Override
     public String toString() {
-        return "CompoundText{" +
-                "paragraphs=" + paragraphs +
-                '}';
+        StringBuffer stringBuffer = new StringBuffer();
+
+        for (Paragraph paragraph : paragraphs) {
+            stringBuffer.append(paragraph.toString());
+        }
+
+        return stringBuffer.toString();
     }
 }
 

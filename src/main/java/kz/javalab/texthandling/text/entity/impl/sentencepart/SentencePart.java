@@ -2,8 +2,6 @@ package kz.javalab.texthandling.text.entity.impl.sentencepart;
 
 import kz.javalab.texthandling.text.entity.Text;
 
-public abstract class SentencePart implements Text {
+public interface SentencePart extends Text {
 
-    @Override
-    public abstract String getContent();
 }

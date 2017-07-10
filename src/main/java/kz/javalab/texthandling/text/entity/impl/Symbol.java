@@ -43,18 +43,6 @@ public class Symbol implements Text {
         this.value = value;
     }
 
-    /**
-     * Creates a string representation of content of the symbol.
-     * @return String representation of content of the symbol.
-     */
-    @Override
-    public String getContent() {
-        StringBuffer stringBuffer = new StringBuffer();
-        
-        stringBuffer.append(value);
-
-        return stringBuffer.toString();
-    }
 
     /**
      * Creates a string representation of <Code>Symbol</Code> instance.
@@ -62,8 +50,6 @@ public class Symbol implements Text {
      */
     @Override
     public String toString() {
-        return "Symbol{" +
-                "value=" + value +
-                '}';
+        return value.toString();
     }
 }
